@@ -3,17 +3,19 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 
 // Screens
-import BookDetailScreen from "../screens/BookDetailScreen";
-import BookReadScreen from "../screens/BookReadScreen";
-import CategoryScreen from "../screens/CategoryScreen";
-import FavoritesScreen from "../screens/FavoritesScreen";
-import FeaturedBooksScreen from "../screens/FeaturedBooksScreen";
-import HomeScreen from "../screens/HomeScreen";
-import OnboardingScreen from "../screens/OnboardingScreen";
-import SettingsScreen from "../screens/SettingsScreen";
-import SignInScreen from "../screens/SigninScreen";
-import SignUpScreen from "../screens/SignupScreen";
-import WelcomeScreen from "../screens/WelcomeScreen";
+import {
+  BookDetailScreen,
+  BookReadScreen,
+  CategoryScreen,
+  FavoritesScreen,
+  FeaturedBooksScreen,
+  HomeScreen,
+  OnboardingScreen,
+  SettingsScreen,
+  SigninScreen,
+  SignupScreen,
+  WelcomeScreen,
+} from "../screens";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -24,10 +26,13 @@ const WelcomeStack = () => {
       initialRouteName="WelcomeScreen"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="Welcome" component={WelcomeScreen} />
-      <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-      <Stack.Screen name="SignIn" component={SignInScreen} />
-      <Stack.Screen name="SignUp" component={SignUpScreen} />
+      <Stack.Screen name="WelcomeStack" component={WelcomeScreen} />
+      <Stack.Screen
+        name="OnboardingWelcomeStack"
+        component={OnboardingScreen}
+      />
+      <Stack.Screen name="SigninWelcomeStack" component={SigninScreen} />
+      <Stack.Screen name="SignupWelcomeStack" component={SignupScreen} />
     </Stack.Navigator>
   );
 };
@@ -35,9 +40,9 @@ const WelcomeStack = () => {
 const HomeStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="FeaturedBooks" component={FeaturedBooksScreen} />
-      <Stack.Screen name="BookStack" component={BookStack} />
+      <Stack.Screen name="HomeStack" component={HomeScreen} />
+      <Stack.Screen name="FeaturedHomeStack" component={FeaturedBooksScreen} />
+      <Stack.Screen name="BookHomeStack" component={BookStack} />
     </Stack.Navigator>
   );
 };
@@ -45,8 +50,8 @@ const HomeStack = () => {
 const FeatureStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="FeaturedBooks" component={FeaturedBooksScreen} />
-      <Stack.Screen name="BookStack" component={BookStack} />
+      <Stack.Screen name="FeaturedStack" component={FeaturedBooksScreen} />
+      <Stack.Screen name="BookFeaturedStack" component={BookStack} />
     </Stack.Navigator>
   );
 };
@@ -54,8 +59,8 @@ const FeatureStack = () => {
 const CategoryStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Category" component={CategoryScreen} />
-      <Stack.Screen name="Featured" component={FeatureStack} />
+      <Stack.Screen name="CategoryStack" component={CategoryScreen} />
+      <Stack.Screen name="FeaturedCategoryStack" component={FeatureStack} />
     </Stack.Navigator>
   );
 };
@@ -72,8 +77,8 @@ const BookStack = () => {
 const FavoritesStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Favorites" component={FavoritesScreen} />
-      <Stack.Screen name="BookStack" component={BookStack} />
+      <Stack.Screen name="FavoritesStack" component={FavoritesScreen} />
+      <Stack.Screen name="BookFavoriteStack" component={BookStack} />
     </Stack.Navigator>
   );
 };
@@ -81,8 +86,8 @@ const FavoritesStack = () => {
 const BottomTab = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Category" component={CategoryScreen} />
+      <Tab.Screen name="Home" component={HomeStack} />
+      <Tab.Screen name="Category" component={CategoryStack} />
       <Tab.Screen name="Favorites" component={FavoritesStack} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
