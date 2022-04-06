@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     flexDirection: "row",
-    bottom: 30,
+    bottom: 20,
     width: "80%",
     justifyContent: "space-between",
     alignSelf: "center",
