@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
+import { SecondaryColor } from "../constants";
 
 // Screens
 import {
@@ -39,7 +40,7 @@ const WelcomeStack = () => {
 
 const HomeStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="HomeStack" component={HomeScreen} />
       <Stack.Screen name="FeaturedHomeStack" component={FeaturedBooksScreen} />
       <Stack.Screen name="BookHomeStack" component={BookStack} />
@@ -58,7 +59,7 @@ const FeatureStack = () => {
 
 const CategoryStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="CategoryStack" component={CategoryScreen} />
       <Stack.Screen name="FeaturedCategoryStack" component={FeatureStack} />
     </Stack.Navigator>
@@ -67,7 +68,7 @@ const CategoryStack = () => {
 
 const BookStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="BookDetail" component={BookDetailScreen} />
       <Stack.Screen name="BookRead" component={BookReadScreen} />
     </Stack.Navigator>
@@ -76,7 +77,7 @@ const BookStack = () => {
 
 const FavoritesStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="FavoritesStack" component={FavoritesScreen} />
       <Stack.Screen name="BookFavoriteStack" component={BookStack} />
     </Stack.Navigator>
@@ -85,7 +86,14 @@ const FavoritesStack = () => {
 
 const BottomTab = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: {
+          backgroundColor: SecondaryColor,
+          height: 80,
+        },
+      }}
+    >
       <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Category" component={CategoryStack} />
       <Tab.Screen name="Favorites" component={FavoritesStack} />
@@ -97,7 +105,7 @@ const BottomTab = () => {
 const Navigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen
           name="Welcome"
           component={WelcomeStack}

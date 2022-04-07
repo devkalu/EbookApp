@@ -1,13 +1,15 @@
 import { View, Text, ImageBackground, StyleSheet, Image } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
+import { PrimaryColor } from "../constants";
+import { MotiView, MotiText } from "moti";
 
 const Header = () => {
   return (
     <View style={styles.container}>
       <ImageBackground
         source={require("../../assets/images/pexels-ricardo-esquivel-1926988.jpeg")}
-        style={styles.imageBackground}
+        style={{ flex: 1, width: "100%", height: "100%" }}
       >
         <LinearGradient
           // Background Linear Gradient
@@ -16,13 +18,34 @@ const Header = () => {
           start={[0, 1]}
           end={[1, 0]}
         />
-        <View style={styles.imageContainer}>
-          <Image
-            source={require("../../assets/book.png")}
-            style={styles.image}
-            resizeMode="contain"
-          />
-          <Text>READER</Text>
+        <View style={styles.welcome}>
+          <MotiView
+            style={styles.imageContainer}
+            from={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "timing",
+              duration: 1500,
+            }}
+          >
+            <Image
+              source={require("../../assets/book.png")}
+              style={styles.image}
+              resizeMode="contain"
+            />
+          </MotiView>
+          <MotiText
+            style={styles.welcomeText}
+            delay={200}
+            from={{ translateY: -10 }}
+            animate={{ translateY: 0 }}
+            transition={{
+              type: "timing",
+              duration: 1500,
+            }}
+          >
+            READER
+          </MotiText>
         </View>
       </ImageBackground>
     </View>
@@ -31,25 +54,31 @@ const Header = () => {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 30,
-  },
-  imageBackground: {
-    flex: 1,
-  },
-  imageContainer: {
-    width: 80,
-    height: 80,
-  },
-  image: {
-    width: "100%",
-    height: "100%",
+    backgroundColor: PrimaryColor,
+    height: 200,
   },
   background: {
     position: "absolute",
     height: "100%",
     width: "100%",
+  },
+  welcome: {
+    alignItems: "center",
+    marginTop: 70,
+  },
+  imageContainer: {
+    height: 60,
+    width: 60,
+  },
+  image: {
+    height: "100%",
+    width: "100%",
+  },
+  welcomeText: {
+    fontSize: 25,
+    fontWeight: "bold",
+    color: "#fff",
+    letterSpacing: 5,
   },
 });
 

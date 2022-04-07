@@ -1,11 +1,14 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React from "react";
 
-const SignupScreen = () => {
+import { Header, SignupForm } from "../components";
+
+const SignupScreen = ({ navigation }) => {
   return (
-    <View>
-      <Text>SignupScreen</Text>
-    </View>
+    <ScrollView>
+      <Header />
+      <SignupForm onPress={() => navigation.navigate("SigninWelcomeStack")} />
+    </ScrollView>
   );
 };
 

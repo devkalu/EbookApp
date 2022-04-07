@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
+import { SecondaryColor } from "../constants";
 
 const PrimaryButton = ({
   gradient = false,
@@ -13,7 +14,7 @@ const PrimaryButton = ({
   },
 }) => {
   return (
-    <View>
+    <View style={styles.container}>
       {gradient ? (
         <LinearGradient
           colors={["rgba(64,202,186,0.9)", "rgba(80,225,166,0.9)"]}
@@ -29,7 +30,9 @@ const PrimaryButton = ({
             { backgroundColor: gradient ? "transparent" : color, width },
           ]}
         >
-          <Text style={styles.textStyle}>{title.toUpperCase()}</Text>
+          <Text style={[styles.textStyle, { color: textColor }]}>
+            {title.toUpperCase()}
+          </Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -45,6 +48,22 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     fontSize: 15,
+    textAlign: "center",
+
+    fontWeight: "bold",
+  },
+  background: {
+    position: "absolute",
+    height: "100%",
+    width: "100%",
+  },
+  container: {
+    height: 50,
+    borderRadius: 25,
+    alignItems: "center",
+    justifyContent: "center",
+
+    overflow: "hidden",
   },
 });
 

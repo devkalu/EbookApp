@@ -1,12 +1,15 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { Header } from "../components";
+import { Header, SigninForm } from "../components";
 
-const SigninScreen = () => {
+const SigninScreen = ({ navigation }) => {
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Header />
-      <Text>SigninScreen</Text>
+      <SigninForm
+        onPress={() => navigation.navigate("SignupWelcomeStack")}
+        homeNavigation={() => navigation.navigate("Tab")}
+      />
     </View>
   );
 };
