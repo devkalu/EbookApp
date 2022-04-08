@@ -9,6 +9,8 @@ import HeadingText from "./HeadingText";
 import SocialButton from "./SocialButton";
 import SignupForm from "./SignupForm";
 import Spacer from "./Spacer";
+import HeaderSearch from "./HeaderSearch";
+import CategoryCard from "./CategoryCard";
 
 export {
   Container,
@@ -22,4 +24,6 @@ export {
   SocialButton,
   SignupForm,
   Spacer,
+  HeaderSearch,
+  CategoryCard,
 };

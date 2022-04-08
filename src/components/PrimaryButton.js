@@ -14,16 +14,17 @@ const PrimaryButton = ({
   },
 }) => {
   return (
-    <View style={styles.container}>
-      {gradient ? (
-        <LinearGradient
-          colors={["rgba(64,202,186,0.9)", "rgba(80,225,166,0.9)"]}
-          style={styles.background}
-          start={[0, 1]}
-          end={[1, 0]}
-        />
-      ) : null}
-      <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
+    <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
+      <View style={styles.container}>
+        {gradient ? (
+          <LinearGradient
+            colors={["rgba(64,202,186,0.95)", "rgba(80,225,166,0.95)"]}
+            style={styles.background}
+            start={[0, 1]}
+            end={[1, 0]}
+          />
+        ) : null}
+
         <View
           style={[
             styles.buttonContainer,
@@ -34,8 +35,8 @@ const PrimaryButton = ({
             {title.toUpperCase()}
           </Text>
         </View>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   );
 };
 

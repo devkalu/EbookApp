@@ -2,6 +2,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { SecondaryColor } from "../constants";
+import { Ionicons } from "@expo/vector-icons";
+import { PrimaryColor } from "../constants";
 
 // Screens
 import {
@@ -34,6 +36,7 @@ const WelcomeStack = () => {
       />
       <Stack.Screen name="SigninWelcomeStack" component={SigninScreen} />
       <Stack.Screen name="SignupWelcomeStack" component={SignupScreen} />
+      <Stack.Screen name="CategoryWelcomeStack" component={CategoryScreen} />
     </Stack.Navigator>
   );
 };
@@ -92,12 +95,50 @@ const BottomTab = () => {
           backgroundColor: SecondaryColor,
           height: 80,
         },
+        tabBarShowLabel: false,
       }}
     >
-      <Tab.Screen name="Home" component={HomeStack} />
-      <Tab.Screen name="Category" component={CategoryStack} />
-      <Tab.Screen name="Favorites" component={FavoritesStack} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen
+        name="Home"
+        component={HomeStack}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name={focused ? "home" : "home-outline"}
+              size={30}
+              color={focused ? PrimaryColor : "white"}
+            />
+          ),
+          headerShown: false,
+        }}
+      />
+
+      <Tab.Screen
+        name="Favorites"
+        component={FavoritesStack}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name={focused ? "heart" : "heart-outline"}
+              size={30}
+              color={focused ? PrimaryColor : "white"}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name={focused ? "settings" : "settings-outline"}
+              size={30}
+              color={focused ? PrimaryColor : "white"}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };

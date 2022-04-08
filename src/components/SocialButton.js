@@ -9,7 +9,7 @@ const SocialButton = ({
   onPress = () => console.log("Button Pressed"),
 }) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
       <View style={[styles.container, { backgroundColor: buttonColor }]}>
         <Icon name={IconName} color="#fff" size={18} />
         <View style={styles.titleContainer}>
@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
 
     overflow: "hidden",
 
-    paddingHorizontal: 50,
+    paddingHorizontal: 20,
+    justifyContent: "center",
   },
   titleStyle: {
     color: "#fff",

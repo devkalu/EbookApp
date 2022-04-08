@@ -55,7 +55,8 @@ const Header = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: PrimaryColor,
-    height: 200,
+    height: 150,
+    flex: 1,
   },
   background: {
     position: "absolute",
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
   },
   welcome: {
     alignItems: "center",
-    marginTop: 70,
+    padding: 50,
   },
   imageContainer: {
     height: 60,
