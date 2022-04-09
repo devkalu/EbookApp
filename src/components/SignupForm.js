@@ -35,7 +35,7 @@ const SignupForm = ({ onPress }) => {
         <Text style={styles.textStyle}>
           Already have an account?
           <TouchableOpacity onPress={onPress}>
-            <Text style={styles.special}>Sign in</Text>
+            <Text style={styles.special}> Sign in</Text>
           </TouchableOpacity>
         </Text>
         <View style={styles.orContainer}>

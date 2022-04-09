@@ -1,5 +1,16 @@
-import { View, Text, SafeAreaView, StyleSheet, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
+import { connect } from "react-redux";
+
+import { categorySelection } from "../actions/categories";
+
 import {
   HeaderSearch,
   PrimaryButton,
@@ -38,7 +49,7 @@ const CATEGORIES = [
   {
     id: "6",
     title: "CALCULUS",
-    image: require("../../assets/images/divider.png"),
+    image: require("../../assets/images/maths.png"),
   },
   {
     id: "7",
@@ -47,7 +58,9 @@ const CATEGORIES = [
   },
 ];
 
-const CategoryScreen = ({ navigation }) => {
+const CategoryScreen = ({ navigation, categories, categorySelection }) => {
+  console.log(categories);
+
   const Footer = () => <View style={{ height: 100 }} />;
   const Header = () => <View style={{ height: 10 }} />;
 
@@ -66,18 +79,23 @@ const CategoryScreen = ({ navigation }) => {
         }}
       >
         <FlatList
-          data={CATEGORIES}
+          data={categories}
           renderItem={({ item }) => {
             return (
-              <View
-                style={{
-                  margin: 10,
-                  borderColor: "#f5f5f5",
-                  borderWidth: 1,
-                }}
+              <TouchableOpacity
+                activeOpacity={0.7}
+                onPress={() => categorySelection(item.id)}
               >
-                <CategoryCard {...item} />
-              </View>
+                <View
+                  style={{
+                    margin: 10,
+                    borderColor: "#f5f5f5",
+                    borderWidth: 1,
+                  }}
+                >
+                  <CategoryCard {...item} />
+                </View>
+              </TouchableOpacity>
             );
           }}
           numColumns={2}
@@ -118,4 +136,16 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CategoryScreen;
+const mapStateToProps = (state) => {
+  return {
+    categories: state.categories,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    categorySelection: (categoryId) => dispatch(categorySelection(categoryId)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryScreen);

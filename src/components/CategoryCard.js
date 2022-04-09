@@ -7,13 +7,21 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
-import { SecondaryColor } from "../constants";
+import { SecondaryColor, PrimaryColor } from "../constants";
 
 const { width } = Dimensions.get("window");
 
-const CategoryCard = ({ image, title }) => {
+const CategoryCard = ({ image, title, isSelected }) => {
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        {
+          borderColor: isSelected ? PrimaryColor : null,
+          borderWidth: isSelected ? 2 : null,
+        },
+      ]}
+    >
       <View style={styles.imageContainer}>
         <Image style={styles.image} resizeMode="contain" source={image} />
       </View>
@@ -51,7 +59,7 @@ const styles = StyleSheet.create({
     width: width / 4.5,
   },
   textStyle: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "600",
     color: SecondaryColor,
   },

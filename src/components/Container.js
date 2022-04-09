@@ -6,7 +6,7 @@ const Container = ({ children }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { width: "80%", alignSelf: "center", flex: 1 },
+  container: { width: "90%", alignSelf: "center", flex: 1 },
 });
 
 export default Container;

@@ -61,10 +61,11 @@ const WelcomeScreen = ({ navigation }) => {
             <PrimaryButton
               color="#fff"
               title="Short Tour"
-              width={320}
               textColor={"#222f3d"}
+              width={345}
               onPress={() => navigation.navigate("OnboardingWelcomeStack")}
             />
+
             <View
               style={{
                 flexDirection: "row",

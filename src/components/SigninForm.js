@@ -26,7 +26,7 @@ const SigninForm = ({ onPress, homeNavigation }) => {
         <Text style={styles.textStyle}>
           Don't have an account?
           <TouchableOpacity onPress={onPress}>
-            <Text style={styles.special}>Sign up</Text>
+            <Text style={styles.special}> Sign up</Text>
           </TouchableOpacity>
         </Text>
         <View style={styles.orContainer}>
