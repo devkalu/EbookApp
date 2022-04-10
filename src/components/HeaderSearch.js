@@ -26,7 +26,7 @@ const HeaderSearch = ({ children }) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: PrimaryColor,
-    height: 150,
+    height: 180,
   },
   background: {
     position: "absolute",

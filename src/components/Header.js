@@ -55,7 +55,7 @@ const Header = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: PrimaryColor,
-    height: 150,
+    height: 180,
     flex: 1,
   },
   background: {

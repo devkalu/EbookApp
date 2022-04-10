@@ -11,6 +11,7 @@ import SignupForm from "./SignupForm";
 import Spacer from "./Spacer";
 import HeaderSearch from "./HeaderSearch";
 import CategoryCard from "./CategoryCard";
+import BookList from "./BookList";
 
 export {
   Container,
@@ -26,4 +27,5 @@ export {
   Spacer,
   HeaderSearch,
   CategoryCard,
+  BookList,
 };
