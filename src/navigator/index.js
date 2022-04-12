@@ -36,7 +36,6 @@ const WelcomeStack = () => {
       />
       <Stack.Screen name="SigninWelcomeStack" component={SigninScreen} />
       <Stack.Screen name="SignupWelcomeStack" component={SignupScreen} />
-      <Stack.Screen name="TabWelcomeStack" component={BottomTab} />
     </Stack.Navigator>
   );
 };
@@ -47,9 +46,6 @@ const HomeStack = () => {
       <Stack.Screen name="HomeStack" component={HomeScreen} />
       <Stack.Screen name="FeaturedHomeStack" component={FeaturedStack} />
       <Stack.Screen name="BookHomeStack" component={BookStack} />
-      <Stack.Screen name="CategoryHomeStack" component={CategoryStack} />
-      <Stack.Screen name="FavoritesHomeStack" component={FavoritesScreen} />
-      <Stack.Screen name="SettingsHomeStack" component={SettingsScreen} />
     </Stack.Navigator>
   );
 };
@@ -59,15 +55,6 @@ const FeaturedStack = () => {
     <Stack.Navigator>
       <Stack.Screen name="FeaturedStack" component={FeaturedBooksScreen} />
       <Stack.Screen name="BookFeaturedStack" component={BookStack} />
-    </Stack.Navigator>
-  );
-};
-
-const CategoryStack = () => {
-  return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="CategoryStack" component={CategoryScreen} />
-      <Stack.Screen name="FeaturedCategoryStack" component={FeaturedStack} />
     </Stack.Navigator>
   );
 };
@@ -85,11 +72,8 @@ const FavoritesStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="FavoritesStack" component={FavoritesScreen} />
-      <Stack.Screen name="HomeFavoritesStack" component={HomeScreen} />
       <Stack.Screen name="FeaturedFavoritesStack" component={FeaturedStack} />
       <Stack.Screen name="BookFavoritesStack" component={BookStack} />
-      <Stack.Screen name="CategoryFavoritesStack" component={CategoryStack} />
-      <Stack.Screen name="SettingsFavoritesStack" component={SettingsScreen} />
     </Stack.Navigator>
   );
 };
@@ -98,11 +82,8 @@ const SettingsStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="SettingsStack" component={SettingsScreen} />
-      <Stack.Screen name="FavoritesSettingStack" component={FavoritesScreen} />
-      <Stack.Screen name="HomeSettingsStack" component={HomeScreen} />
       <Stack.Screen name="FeaturedSettingsStack" component={FeaturedStack} />
       <Stack.Screen name="BookSettingsStack" component={BookStack} />
-      <Stack.Screen name="CategorySettingStack" component={CategoryStack} />
     </Stack.Navigator>
   );
 };
@@ -173,6 +154,7 @@ const Navigator = () => {
           component={WelcomeStack}
           options={{ headerShown: false }}
         />
+        <Stack.Screen name="Category" component={CategoryScreen} />
         <Stack.Screen name="Tab" component={BottomTab} />
       </Stack.Navigator>
     </NavigationContainer>

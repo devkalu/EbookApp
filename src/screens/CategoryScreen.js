@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import { connect } from "react-redux";
+import { useNavigation } from "@react-navigation/native";
 
 import { categorySelection } from "../actions/categories";
 
@@ -58,7 +59,9 @@ const CATEGORIES = [
   },
 ];
 
-const CategoryScreen = ({ navigation, categories, categorySelection }) => {
+const CategoryScreen = ({ categories, categorySelection }) => {
+  const navigation = useNavigation();
+
   const Footer = () => <View style={{ height: 100 }} />;
   const Header = () => <View style={{ height: 10 }} />;
 
@@ -109,7 +112,7 @@ const CategoryScreen = ({ navigation, categories, categorySelection }) => {
           title="SAVE"
           textColor="#fff"
           width={100}
-          onPress={() => navigation.navigate("Home")}
+          onPress={() => navigation.navigate("Tab")}
         />
       </View>
     </View>

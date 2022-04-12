@@ -8,7 +8,7 @@ const SigninScreen = ({ navigation }) => {
       <Header />
       <SigninForm
         onPress={() => navigation.navigate("SignupWelcomeStack")}
-        homeNavigation={() => navigation.navigate("CategoryWelcomeStack")}
+        homeNavigation={() => navigation.navigate("Category")}
       />
     </ScrollView>
   );
