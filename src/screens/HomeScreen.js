@@ -1,16 +1,41 @@
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView, StyleSheet, ScrollView } from "react-native";
 import React from "react";
+import { connect } from "react-redux";
 
-import { HeaderSearch, BookList } from "../components";
+import { HeaderSearch, BookList, SearchInput } from "../components";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation, books }) => {
   return (
-    <View>
-      <HeaderSearch />
+    <ScrollView>
+      <HeaderSearch>
+        <SafeAreaView />
+
+        <Text style={styles.titleText}>HOME</Text>
+        <SearchInput onPress={() => navigation.navigate("CategoryHomeStack")} />
+      </HeaderSearch>
 
       <BookList />
-    </View>
+      <BookList />
+      <BookList />
+      <BookList />
+    </ScrollView>
   );
 };
 
-export default HomeScreen;
+const styles = StyleSheet.create({
+  titleText: {
+    fontWeight: "bold",
+    fontSize: 20,
+    color: "#fff",
+    letterSpacing: 2,
+    textAlign: "center",
+  },
+});
+
+const mapStateToProps = (state) => {
+  return {
+    books: state.books,
+  };
+};
+
+export default connect(mapStateToProps)(HomeScreen);

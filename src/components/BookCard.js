@@ -5,7 +5,7 @@ const { width } = Dimensions.get("window");
 
 const BookCard = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image
           source={{
@@ -14,9 +14,12 @@ const BookCard = () => {
           style={styles.image}
         />
       </View>
-      <Text style={styles.bookTitle} numberOfLines={3}>
-        Book Name Book Name Book Name Book Name
-      </Text>
+      <View style={styles.titleContainer}>
+        <Text style={styles.bookTitle} numberOfLines={2}>
+          Book Name Book Name Book Name Book Name
+        </Text>
+      </View>
+
       <Text style={styles.author}>Author Name</Text>
     </View>
   );
@@ -37,6 +40,12 @@ const styles = StyleSheet.create({
   },
   bookTitle: {
     fontWeight: "600",
+  },
+  titleContainer: {
+    width: width / 2.5,
+  },
+  container: {
+    marginLeft: 20,
   },
 });
 export default BookCard;

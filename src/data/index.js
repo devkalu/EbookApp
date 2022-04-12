@@ -1,4 +1,4 @@
-const BOOKS = [
+export const BOOKS = [
   {
     id: "01",
     title: "Life on the Edge: The Coming of Age of Quantum Biology",

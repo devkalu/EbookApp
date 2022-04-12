@@ -12,6 +12,7 @@ import Spacer from "./Spacer";
 import HeaderSearch from "./HeaderSearch";
 import CategoryCard from "./CategoryCard";
 import BookList from "./BookList";
+import SearchInput from "./SearchInput";
 
 export {
   Container,
@@ -28,4 +29,5 @@ export {
   HeaderSearch,
   CategoryCard,
   BookList,
+  SearchInput,
 };

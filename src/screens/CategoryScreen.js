@@ -59,8 +59,6 @@ const CATEGORIES = [
 ];
 
 const CategoryScreen = ({ navigation, categories, categorySelection }) => {
-  console.log(categories);
-
   const Footer = () => <View style={{ height: 100 }} />;
   const Header = () => <View style={{ height: 10 }} />;
 
@@ -111,7 +109,7 @@ const CategoryScreen = ({ navigation, categories, categorySelection }) => {
           title="SAVE"
           textColor="#fff"
           width={100}
-          onPress={() => navigation.navigate("Tab")}
+          onPress={() => navigation.navigate("Home")}
         />
       </View>
     </View>
