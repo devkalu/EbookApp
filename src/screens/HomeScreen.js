@@ -11,7 +11,7 @@ const HomeScreen = ({ navigation, books }) => {
         <SafeAreaView />
 
         <Text style={styles.titleText}>HOME</Text>
-        <SearchInput onPress={() => navigation.navigate("CategoryHomeStack")} />
+        <SearchInput onPress={() => navigation.navigate("Category")} />
       </HeaderSearch>
 
       <BookList />
