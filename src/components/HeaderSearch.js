@@ -1,9 +1,18 @@
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  SafeAreaView,
+} from "react-native";
 import React from "react";
 import { PrimaryColor } from "../constants";
 import { LinearGradient } from "expo-linear-gradient";
+import SearchInput from "./SearchInput";
+import { useNavigation } from "@react-navigation/native";
 
-const HeaderSearch = ({ children }) => {
+const HeaderSearch = ({ title = "", search = false }) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -17,7 +26,13 @@ const HeaderSearch = ({ children }) => {
           start={[0, 1]}
           end={[1, 0]}
         />
-        {children}
+        {search ? (
+          <View style={{ flex: 1 }}>
+            <SafeAreaView />
+            <Text style={styles.titleText}>{title.toUpperCase()}</Text>
+            <SearchInput onPress={() => navigation.navigate("Category")} />
+          </View>
+        ) : null}
       </ImageBackground>
     </View>
   );
@@ -32,6 +47,13 @@ const styles = StyleSheet.create({
     position: "absolute",
     height: "100%",
     width: "100%",
+  },
+  titleText: {
+    fontWeight: "bold",
+    fontSize: 20,
+    color: "#fff",
+    letterSpacing: 2,
+    textAlign: "center",
   },
 });
 

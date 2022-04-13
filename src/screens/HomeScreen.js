@@ -1,18 +1,13 @@
-import { View, Text, SafeAreaView, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 import { connect } from "react-redux";
 
-import { HeaderSearch, BookList, SearchInput } from "../components";
+import { HeaderSearch, BookList } from "../components";
 
 const HomeScreen = ({ navigation, books }) => {
   return (
     <ScrollView>
-      <HeaderSearch>
-        <SafeAreaView />
-
-        <Text style={styles.titleText}>HOME</Text>
-        <SearchInput onPress={() => navigation.navigate("Category")} />
-      </HeaderSearch>
+      <HeaderSearch title="HOME" search={true} navigation={navigation} />
 
       <BookList />
       <BookList />

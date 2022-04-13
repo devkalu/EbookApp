@@ -8,13 +8,19 @@ import {
 import React from "react";
 import BookCard from "./BookCard";
 import { SecondaryColor } from "../constants";
+import { useNavigation } from "@react-navigation/native";
 
 const BookList = () => {
+  const navigation = useNavigation();
+
   return (
     <View>
       <View style={styles.titleContainer}>
         <Text style={styles.listTitle}>Trending Now</Text>
-        <TouchableOpacity activeOpacity={0.7}>
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={() => navigation.navigate("FeaturedHomeStack")}
+        >
           <View style={styles.viewAll}>
             <Text style={styles.viewAllText}>VIEW ALL</Text>
           </View>

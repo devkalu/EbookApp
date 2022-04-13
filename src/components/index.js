@@ -13,6 +13,7 @@ import HeaderSearch from "./HeaderSearch";
 import CategoryCard from "./CategoryCard";
 import BookList from "./BookList";
 import SearchInput from "./SearchInput";
+import FeatureCard from "./FeatureCard";
 
 export {
   Container,
@@ -30,4 +31,5 @@ export {
   CategoryCard,
   BookList,
   SearchInput,
+  FeatureCard,
 };

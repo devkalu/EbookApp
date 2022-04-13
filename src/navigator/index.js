@@ -52,7 +52,7 @@ const HomeStack = () => {
 
 const FeaturedStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="FeaturedStack" component={FeaturedBooksScreen} />
       <Stack.Screen name="BookFeaturedStack" component={BookStack} />
     </Stack.Navigator>
@@ -126,6 +126,7 @@ const BottomTab = () => {
               color={focused ? PrimaryColor : "white"}
             />
           ),
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -139,6 +140,7 @@ const BottomTab = () => {
               color={focused ? PrimaryColor : "white"}
             />
           ),
+          headerShown: false,
         }}
       />
     </Tab.Navigator>

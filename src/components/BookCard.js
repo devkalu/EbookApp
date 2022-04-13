@@ -2,6 +2,7 @@ import { View, Text, Image, StyleSheet, Dimensions } from "react-native";
 import React from "react";
 
 const { width } = Dimensions.get("window");
+import { Colors } from "../constants";
 
 const BookCard = () => {
   return (
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   author: {
-    color: "#9f9f9f",
+    color: Colors.accent200,
     fontSize: 12,
   },
   bookTitle: {
