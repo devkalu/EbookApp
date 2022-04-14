@@ -4,23 +4,56 @@ import {
   StyleSheet,
   ImageBackground,
   SafeAreaView,
+  TouchableOpacity,
 } from "react-native";
 import React from "react";
 import { PrimaryColor } from "../constants";
 import { LinearGradient } from "expo-linear-gradient";
 import SearchInput from "./SearchInput";
 import { useNavigation } from "@react-navigation/native";
-import { Ionicons } from "@expo/vector-icons";
 
 const HeaderSearch = ({
   title = "",
   search = false,
-  navigationLeft = true,
-  navigationRight = false,
-  onPressNavigationLeft = () => {},
-  onPressNavigationRight = () => {},
+
+  onPressNavigationLeft,
+  onPressNavigationRight,
+  NavigationLeftIcon,
+  NavigationRightIcon,
+  navigationLeft,
+  navigationRight,
 }) => {
   const navigation = useNavigation();
+
+  let TabBar = (
+    <View>
+      <Text style={styles.titleText}>{title.toUpperCase()}</Text>
+    </View>
+  );
+  if (NavigationLeftIcon || NavigationRightIcon) {
+    TabBar = (
+      <View style={styles.tabNavigation}>
+        {navigationLeft ? (
+          <TouchableOpacity activeOpacity={0.7} onPress={onPressNavigationLeft}>
+            <NavigationLeftIcon />
+          </TouchableOpacity>
+        ) : (
+          <View style={{ width: 32 }} />
+        )}
+        <Text style={styles.titleText}>{title.toUpperCase()}</Text>
+        {navigationRight ? (
+          <TouchableOpacity
+            activeOpacity={0.7}
+            onPress={onPressNavigationRight}
+          >
+            <NavigationRightIcon />
+          </TouchableOpacity>
+        ) : (
+          <View style={{ width: 32 }} />
+        )}
+      </View>
+    );
+  }
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -36,23 +69,20 @@ const HeaderSearch = ({
         />
         <SafeAreaView />
         {search ? (
-          <View style={{ flex: 1, justifyContent: "center" }}>
+          <View
+            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+          >
             <View
-              style={{ flexDirection: "row", justifyContent: "space-between" }}
+              style={{
+                width: "90%",
+              }}
             >
-              {navigationLeft && (
-                <Ionicons name="arrow-back-sharp" size={24} color="black" />
-              )}
-              <Text style={styles.titleText}>{title.toUpperCase()}</Text>
+              {TabBar}
             </View>
             <SearchInput onPress={() => navigation.navigate("Category")} />
           </View>
         ) : (
-          <View style={{ flex: 1, justifyContent: "center" }}>
-            <View>
-              <Text style={styles.titleText}>{title.toUpperCase()}</Text>
-            </View>
-          </View>
+          <View style={{ flex: 1, justifyContent: "center" }}>{TabBar}</View>
         )}
       </ImageBackground>
     </View>
@@ -75,6 +105,11 @@ const styles = StyleSheet.create({
     color: "#fff",
     letterSpacing: 2,
     textAlign: "center",
+  },
+  tabNavigation: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
 });
 
