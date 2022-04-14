@@ -10,54 +10,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 
+import { HeaderSearch, PrimaryButton, CategoryCard } from "../components";
 import { categorySelection } from "../actions/categories";
-
-import {
-  HeaderSearch,
-  PrimaryButton,
-  CategoryCard,
-  Container,
-  Spacer,
-} from "../components";
-import { PrimaryColor } from "../constants";
-
-const CATEGORIES = [
-  {
-    id: "1",
-    title: "BIOLOGY",
-    image: require("../../assets/images/biology.png"),
-  },
-  {
-    id: "2",
-    title: "CHEMISTRY",
-    image: require("../../assets/images/chemisty.png"),
-  },
-  {
-    id: "3",
-    title: "GEOMETRY",
-    image: require("../../assets/images/geometry.png"),
-  },
-  {
-    id: "4",
-    title: "GEOGRAPHY",
-    image: require("../../assets/images/globe.png"),
-  },
-  {
-    id: "5",
-    title: "LANGUAGE",
-    image: require("../../assets/images/languages.png"),
-  },
-  {
-    id: "6",
-    title: "CALCULUS",
-    image: require("../../assets/images/maths.png"),
-  },
-  {
-    id: "7",
-    title: "ENGINEERING",
-    image: require("../../assets/images/divider.png"),
-  },
-];
 
 const CategoryScreen = ({ categories, categorySelection }) => {
   const navigation = useNavigation();
@@ -67,11 +21,8 @@ const CategoryScreen = ({ categories, categorySelection }) => {
 
   return (
     <View style={{ flex: 1, backgroundColor: "#f5f5f5" }}>
-      <HeaderSearch>
-        <SafeAreaView style={{ justifyContent: "center", flex: 1 }}>
-          <Text style={styles.titleStyle}>CATEGORY</Text>
-        </SafeAreaView>
-      </HeaderSearch>
+      <HeaderSearch title="CATEGORY" navigation={navigation} />
+      <SafeAreaView />
 
       <View
         style={{
@@ -94,7 +45,11 @@ const CategoryScreen = ({ categories, categorySelection }) => {
                     borderWidth: 1,
                   }}
                 >
-                  <CategoryCard {...item} />
+                  <CategoryCard
+                    image={item.image}
+                    title={item.title}
+                    isSelected={item.isSelected}
+                  />
                 </View>
               </TouchableOpacity>
             );
@@ -138,8 +93,9 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state) => {
+  const { categories } = state;
   return {
-    categories: state.categories,
+    categories,
   };
 };
 

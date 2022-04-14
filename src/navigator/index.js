@@ -9,7 +9,6 @@ import { PrimaryColor } from "../constants";
 import {
   BookDetailScreen,
   BookReadScreen,
-  CategoryScreen,
   FavoritesScreen,
   FeaturedBooksScreen,
   HomeScreen,
@@ -18,6 +17,7 @@ import {
   SigninScreen,
   SignupScreen,
   WelcomeScreen,
+  CategoryScreen,
 } from "../screens";
 
 const Stack = createNativeStackNavigator();
@@ -156,8 +156,8 @@ const Navigator = () => {
           component={WelcomeStack}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="Category" component={CategoryScreen} />
         <Stack.Screen name="Tab" component={BottomTab} />
+        <Stack.Screen name="Category" component={CategoryScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

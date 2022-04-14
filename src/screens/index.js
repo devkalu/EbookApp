@@ -1,6 +1,5 @@
 import BookDetailScreen from "./BookDetailScreen";
 import BookReadScreen from "./BookReadScreen";
-import CategoryScreen from "./CategoryScreen";
 import FavoritesScreen from "./FavoritesScreen";
 import FeaturedBooksScreen from "./FeaturedBooksScreen";
 import HomeScreen from "./HomeScreen";
@@ -9,11 +8,11 @@ import SettingsScreen from "./SettingsScreen";
 import SigninScreen from "./SigninScreen";
 import SignupScreen from "./SignupScreen";
 import WelcomeScreen from "./WelcomeScreen";
+import CategoryScreen from "./CategoryScreen";
 
 export {
   BookDetailScreen,
   BookReadScreen,
-  CategoryScreen,
   FavoritesScreen,
   FeaturedBooksScreen,
   HomeScreen,
@@ -22,4 +21,5 @@ export {
   SigninScreen,
   SignupScreen,
   WelcomeScreen,
+  CategoryScreen,
 };
