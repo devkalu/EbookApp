@@ -11,7 +11,12 @@ import { LinearGradient } from "expo-linear-gradient";
 import SearchInput from "./SearchInput";
 import { useNavigation } from "@react-navigation/native";
 
-const HeaderSearch = ({ title = "", search = false }) => {
+const HeaderSearch = ({
+  title = "",
+  search = false,
+  navigationLeft = false,
+  navigationRight = false,
+}) => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
@@ -26,13 +31,17 @@ const HeaderSearch = ({ title = "", search = false }) => {
           start={[0, 1]}
           end={[1, 0]}
         />
+        <SafeAreaView />
         {search ? (
-          <View style={{ flex: 1 }}>
-            <SafeAreaView />
+          <View style={{ flex: 1, justifyContent: "center" }}>
             <Text style={styles.titleText}>{title.toUpperCase()}</Text>
             <SearchInput onPress={() => navigation.navigate("Category")} />
           </View>
-        ) : null}
+        ) : (
+          <View style={{ flex: 1, justifyContent: "center" }}>
+            <Text style={styles.titleText}>{title.toUpperCase()}</Text>
+          </View>
+        )}
       </ImageBackground>
     </View>
   );
