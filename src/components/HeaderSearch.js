@@ -10,12 +10,15 @@ import { PrimaryColor } from "../constants";
 import { LinearGradient } from "expo-linear-gradient";
 import SearchInput from "./SearchInput";
 import { useNavigation } from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons";
 
 const HeaderSearch = ({
   title = "",
   search = false,
-  navigationLeft = false,
+  navigationLeft = true,
   navigationRight = false,
+  onPressNavigationLeft = () => {},
+  onPressNavigationRight = () => {},
 }) => {
   const navigation = useNavigation();
   return (
@@ -34,12 +37,21 @@ const HeaderSearch = ({
         <SafeAreaView />
         {search ? (
           <View style={{ flex: 1, justifyContent: "center" }}>
-            <Text style={styles.titleText}>{title.toUpperCase()}</Text>
+            <View
+              style={{ flexDirection: "row", justifyContent: "space-between" }}
+            >
+              {navigationLeft && (
+                <Ionicons name="arrow-back-sharp" size={24} color="black" />
+              )}
+              <Text style={styles.titleText}>{title.toUpperCase()}</Text>
+            </View>
             <SearchInput onPress={() => navigation.navigate("Category")} />
           </View>
         ) : (
           <View style={{ flex: 1, justifyContent: "center" }}>
-            <Text style={styles.titleText}>{title.toUpperCase()}</Text>
+            <View>
+              <Text style={styles.titleText}>{title.toUpperCase()}</Text>
+            </View>
           </View>
         )}
       </ImageBackground>

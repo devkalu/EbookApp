@@ -44,36 +44,42 @@ const HomeStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="HomeStack" component={HomeScreen} />
-      <Stack.Screen name="FeaturedHomeStack" component={FeaturedStack} />
-      <Stack.Screen name="BookHomeStack" component={BookStack} />
+      <Stack.Screen name="FeaturedHomeStack" component={FeaturedBooksScreen} />
+      <Stack.Screen name="BookHomeStack" component={BookDetailScreen} />
     </Stack.Navigator>
   );
 };
 
-const FeaturedStack = () => {
-  return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="FeaturedStack" component={FeaturedBooksScreen} />
-      <Stack.Screen name="BookFeaturedStack" component={BookStack} />
-    </Stack.Navigator>
-  );
-};
+// const FeaturedStack = () => {
+//   return (
+//     <Stack.Navigator screenOptions={{ headerShown: false }}>
+//       <Stack.Screen
+//         name="FeaturedStackScreen"
+//         component={FeaturedBooksScreen}
+//       />
+//       <Stack.Screen name="BookFeaturedStack" component={BookStack} />
+//     </Stack.Navigator>
+//   );
+// };
 
-const BookStack = () => {
-  return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="BookDetail" component={BookDetailScreen} />
-      <Stack.Screen name="BookRead" component={BookReadScreen} />
-    </Stack.Navigator>
-  );
-};
+// const BookStack = () => {
+//   return (
+//     <Stack.Navigator screenOptions={{ headerShown: false }}>
+//       <Stack.Screen name="BookDetail" component={BookDetailScreen} />
+//       <Stack.Screen name="BookRead" component={BookReadScreen} />
+//     </Stack.Navigator>
+//   );
+// };
 
 const FavoritesStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="FavoritesStack" component={FavoritesScreen} />
-      <Stack.Screen name="FeaturedFavoritesStack" component={FeaturedStack} />
-      <Stack.Screen name="BookFavoritesStack" component={BookStack} />
+      <Stack.Screen
+        name="FeaturedFavoritesStack"
+        component={FeaturedBooksScreen}
+      />
+      <Stack.Screen name="BookFavoritesStack" component={BookDetailScreen} />
     </Stack.Navigator>
   );
 };
@@ -82,8 +88,11 @@ const SettingsStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="SettingsStack" component={SettingsScreen} />
-      <Stack.Screen name="FeaturedSettingsStack" component={FeaturedStack} />
-      <Stack.Screen name="BookSettingsStack" component={BookStack} />
+      <Stack.Screen
+        name="FeaturedSettingsStack"
+        component={FeaturedBooksScreen}
+      />
+      <Stack.Screen name="BookSettingsStack" component={BookDetailScreen} />
     </Stack.Navigator>
   );
 };

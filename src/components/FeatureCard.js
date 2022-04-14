@@ -10,12 +10,18 @@ import React from "react";
 import Stars from "./Stars";
 
 import { SecondaryColor } from "../constants";
+import { useNavigation } from "@react-navigation/native";
 
 const { width } = Dimensions.get("window");
 
 const FeatureCard = () => {
+  const navigation = useNavigation();
+
   return (
-    <TouchableOpacity activeOpacity={0.7}>
+    <TouchableOpacity
+      activeOpacity={0.7}
+      onPress={() => navigation.navigate("BookHomeStack")}
+    >
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
@@ -94,7 +100,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 2,
     marginVertical: 5,
-    borderRadius: 10,
+
     overflow: "hidden",
   },
   categoryText: {

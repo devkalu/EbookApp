@@ -10,23 +10,18 @@ import BookCard from "./BookCard";
 import { SecondaryColor } from "../constants";
 import { useNavigation } from "@react-navigation/native";
 
-const BookList = () => {
-  const navigation = useNavigation();
-
+const BookList = ({ defaultTitle = "", navigationViewAll }) => {
   return (
     <View>
       <View style={styles.titleContainer}>
-        <Text style={styles.listTitle}>Trending Now</Text>
-        <TouchableOpacity
-          activeOpacity={0.7}
-          onPress={() => navigation.navigate("FeaturedHomeStack")}
-        >
+        <Text style={styles.listTitle}>{defaultTitle}</Text>
+        <TouchableOpacity activeOpacity={0.7} onPress={navigationViewAll}>
           <View style={styles.viewAll}>
             <Text style={styles.viewAllText}>VIEW ALL</Text>
           </View>
         </TouchableOpacity>
       </View>
-      <ScrollView horizontal>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <BookCard />
         <BookCard />
         <BookCard />

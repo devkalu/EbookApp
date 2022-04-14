@@ -3,16 +3,24 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { HeaderSearch, BookList } from "../components";
+import { useNavigation } from "@react-navigation/native";
 
-const HomeScreen = ({ navigation, books }) => {
+const HomeScreen = ({ books }) => {
+  const navigation = useNavigation();
+
   return (
     <ScrollView>
       <HeaderSearch title="HOME" search={true} navigation={navigation} />
 
+      <BookList
+        navigationViewAll={() =>
+          navigation.navigate("FeaturedHomeStack", { title: "Trending Now" })
+        }
+        defaultTitle="Trending Now"
+      />
+      {/* <BookList />
       <BookList />
-      <BookList />
-      <BookList />
-      <BookList />
+      <BookList /> */}
     </ScrollView>
   );
 };
