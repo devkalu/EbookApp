@@ -5,9 +5,14 @@ import { useNavigation } from "@react-navigation/native";
 import { useRoute } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 
-const FeaturedBooksScreen = ({ route }) => {
+const FeaturedBooksScreen = ({ route, screen }) => {
   const navigation = useNavigation();
   const routeTitle = route.params.title;
+  const screenParam = route.params.screen;
+
+  if (screen) {
+    screenParam = screen;
+  }
 
   const NavigationLeftIcon = () => {
     return (
@@ -30,11 +35,11 @@ const FeaturedBooksScreen = ({ route }) => {
         navigationLeft={true}
       />
       <ScrollView>
-        <FeatureCard />
-        <FeatureCard />
-        <FeatureCard />
-        <FeatureCard />
-        <FeatureCard />
+        <FeatureCard screen={screenParam} />
+        <FeatureCard screen={screenParam} />
+        <FeatureCard screen={screenParam} />
+        <FeatureCard screen={screenParam} />
+        <FeatureCard screen={screenParam} />
       </ScrollView>
     </View>
   );

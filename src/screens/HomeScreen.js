@@ -14,49 +14,73 @@ const HomeScreen = ({ books }) => {
       <ScrollView>
         <BookList
           navigationViewAll={() =>
-            navigation.navigate("FeaturedHomeStack", { title: "Trending Now" })
+            navigation.navigate("FeaturedHomeStack", {
+              title: "Trending Now",
+              screen: "BookHomeStack",
+            })
           }
           defaultTitle="Trending Now"
         />
         <BookList
           navigationViewAll={() =>
-            navigation.navigate("FeaturedHomeStack", { title: "Biology" })
+            navigation.navigate("FeaturedHomeStack", {
+              title: "Biology",
+              screen: "BookHomeStack",
+            })
           }
           defaultTitle="Biology"
         />
         <BookList
           navigationViewAll={() =>
-            navigation.navigate("FeaturedHomeStack", { title: "Chemistry" })
+            navigation.navigate("FeaturedHomeStack", {
+              title: "Chemistry",
+              screen: "BookHomeStack",
+            })
           }
           defaultTitle="Chemistry"
         />
         <BookList
           navigationViewAll={() =>
-            navigation.navigate("FeaturedHomeStack", { title: "Geometry" })
+            navigation.navigate("FeaturedHomeStack", {
+              title: "Geometry",
+              screen: "BookHomeStack",
+            })
           }
           defaultTitle="Geometry"
         />
         <BookList
           navigationViewAll={() =>
-            navigation.navigate("FeaturedHomeStack", { title: "Geography" })
+            navigation.navigate("FeaturedHomeStack", {
+              title: "Geography",
+              screen: "BookHomeStack",
+            })
           }
           defaultTitle="Geography"
         />
         <BookList
           navigationViewAll={() =>
-            navigation.navigate("FeaturedHomeStack", { title: "Language" })
+            navigation.navigate("FeaturedHomeStack", {
+              title: "Language",
+              screen: "BookHomeStack",
+            })
           }
           defaultTitle="Language"
         />
         <BookList
           navigationViewAll={() =>
-            navigation.navigate("FeaturedHomeStack", { title: "Calculus" })
+            navigation.navigate("FeaturedHomeStack", {
+              title: "Calculus",
+              screen: "BookHomeStack",
+            })
           }
           defaultTitle="Calculus"
         />
         <BookList
           navigationViewAll={() =>
-            navigation.navigate("FeaturedHomeStack", { title: "Engineering" })
+            navigation.navigate("FeaturedHomeStack", {
+              title: "Engineering",
+              screen: "BookHomeStack",
+            })
           }
           defaultTitle="Engineering"
         />

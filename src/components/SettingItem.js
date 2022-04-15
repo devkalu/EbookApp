@@ -10,6 +10,7 @@ const SettingItem = ({
   iconName,
   iconSize = 20,
   hasNavigation = true,
+  onPress = () => {},
 }) => {
   return (
     <View style={{ borderBottomColor: Colors.accent200, borderBottomWidth: 1 }}>
@@ -18,6 +19,7 @@ const SettingItem = ({
         style={{
           marginTop: 10,
         }}
+        onPress={onPress}
       >
         <View style={styles.container}>
           <View style={styles.innerContainer}>

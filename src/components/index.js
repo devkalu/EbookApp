@@ -19,6 +19,8 @@ import SettingItem from "./SettingItem";
 import Stars from "./Stars";
 import Review from "./Review";
 import ModalContainer from "./ModalContainer";
+import ReviewInput from "./ReviewInput";
+import LogoutConfirmation from "./LogoutConfirmation";
 
 export {
   Container,
@@ -42,4 +44,6 @@ export {
   Stars,
   Review,
   ModalContainer,
+  ReviewInput,
+  LogoutConfirmation,
 };

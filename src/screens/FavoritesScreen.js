@@ -8,16 +8,16 @@ const FavoritesScreen = () => {
   return (
     <ScrollView>
       <HeaderSearch title="Favourites" />
-      <FeatureCard />
-      <FeatureCard />
-      <FeatureCard />
-      <FeatureCard />
-      <FeatureCard />
-      <FeatureCard />
-      <FeatureCard />
-      <FeatureCard />
-      <FeatureCard />
-      <FeatureCard />
+      <FeatureCard screen="BookFavoritesStack" />
+      <FeatureCard screen="BookFavoritesStack" />
+      <FeatureCard screen="BookFavoritesStack" />
+      <FeatureCard screen="BookFavoritesStack" />
+      <FeatureCard screen="BookFavoritesStack" />
+      <FeatureCard screen="BookFavoritesStack" />
+      <FeatureCard screen="BookFavoritesStack" />
+      <FeatureCard screen="BookFavoritesStack" />
+      <FeatureCard screen="BookFavoritesStack" />
+      <FeatureCard screen="BookFavoritesStack" />
       <View style={{ height: 20 }} />
     </ScrollView>
   );

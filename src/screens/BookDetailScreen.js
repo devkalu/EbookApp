@@ -15,6 +15,7 @@ import {
   PrimaryButton,
   Review,
   ModalContainer,
+  ReviewInput,
 } from "../components";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -25,6 +26,10 @@ const { width } = Dimensions.get("window");
 const BookDetailScreen = () => {
   const [isVisible, setIsVisible] = useState(false);
   const navigation = useNavigation();
+
+  const toggleModal = () => {
+    setIsVisible(!isVisible);
+  };
 
   const NavigationLeftIcon = () => {
     return (
@@ -88,7 +93,11 @@ const BookDetailScreen = () => {
             here', making it look like readable English.{" "}
           </Text>
         </View>
-        {isVisible && <ModalContainer visibility={isVisible}></ModalContainer>}
+        {isVisible && (
+          <ModalContainer visibility={isVisible} toggleModal={toggleModal}>
+            <ReviewInput />
+          </ModalContainer>
+        )}
         <View>
           <View style={styles.reviewContainer}>
             <Text style={styles.descriptionTitle}>REVIEWS</Text>
