@@ -14,14 +14,15 @@ import { useNavigation } from "@react-navigation/native";
 
 const { width } = Dimensions.get("window");
 
-const FeatureCard = () => {
+const FeatureCard = ({ screen = "BookHomeStack" }) => {
   const navigation = useNavigation();
 
+  const onPressHandler = () => {
+    navigation.navigate(screen);
+  };
+
   return (
-    <TouchableOpacity
-      activeOpacity={0.7}
-      onPress={() => navigation.navigate("BookHomeStack")}
-    >
+    <TouchableOpacity activeOpacity={0.7} onPress={onPressHandler}>
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image

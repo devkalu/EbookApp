@@ -51,27 +51,6 @@ const HomeStack = () => {
   );
 };
 
-// const FeaturedStack = () => {
-//   return (
-//     <Stack.Navigator screenOptions={{ headerShown: false }}>
-//       <Stack.Screen
-//         name="FeaturedStackScreen"
-//         component={FeaturedBooksScreen}
-//       />
-//       <Stack.Screen name="BookFeaturedStack" component={BookStack} />
-//     </Stack.Navigator>
-//   );
-// };
-
-// const BookStack = () => {
-//   return (
-//     <Stack.Navigator screenOptions={{ headerShown: false }}>
-//       <Stack.Screen name="BookDetail" component={BookDetailScreen} />
-//       <Stack.Screen name="BookRead" component={BookReadScreen} />
-//     </Stack.Navigator>
-//   );
-// };
-
 const FavoritesStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
