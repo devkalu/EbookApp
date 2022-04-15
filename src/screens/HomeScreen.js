@@ -9,19 +9,60 @@ const HomeScreen = ({ books }) => {
   const navigation = useNavigation();
 
   return (
-    <ScrollView>
+    <>
       <HeaderSearch title="HOME" search={true} navigation={navigation} />
-
-      <BookList
-        navigationViewAll={() =>
-          navigation.navigate("FeaturedHomeStack", { title: "Trending Now" })
-        }
-        defaultTitle="Trending Now"
-      />
-      {/* <BookList />
-      <BookList />
-      <BookList /> */}
-    </ScrollView>
+      <ScrollView>
+        <BookList
+          navigationViewAll={() =>
+            navigation.navigate("FeaturedHomeStack", { title: "Trending Now" })
+          }
+          defaultTitle="Trending Now"
+        />
+        <BookList
+          navigationViewAll={() =>
+            navigation.navigate("FeaturedHomeStack", { title: "Biology" })
+          }
+          defaultTitle="Biology"
+        />
+        <BookList
+          navigationViewAll={() =>
+            navigation.navigate("FeaturedHomeStack", { title: "Chemistry" })
+          }
+          defaultTitle="Chemistry"
+        />
+        <BookList
+          navigationViewAll={() =>
+            navigation.navigate("FeaturedHomeStack", { title: "Geometry" })
+          }
+          defaultTitle="Geometry"
+        />
+        <BookList
+          navigationViewAll={() =>
+            navigation.navigate("FeaturedHomeStack", { title: "Geography" })
+          }
+          defaultTitle="Geography"
+        />
+        <BookList
+          navigationViewAll={() =>
+            navigation.navigate("FeaturedHomeStack", { title: "Language" })
+          }
+          defaultTitle="Language"
+        />
+        <BookList
+          navigationViewAll={() =>
+            navigation.navigate("FeaturedHomeStack", { title: "Calculus" })
+          }
+          defaultTitle="Calculus"
+        />
+        <BookList
+          navigationViewAll={() =>
+            navigation.navigate("FeaturedHomeStack", { title: "Engineering" })
+          }
+          defaultTitle="Engineering"
+        />
+        <View style={{ height: 30 }} />
+      </ScrollView>
+    </>
   );
 };
 

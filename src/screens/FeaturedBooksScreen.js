@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 import { FeatureCard, HeaderSearch } from "../components";
 import { useNavigation } from "@react-navigation/native";
@@ -29,7 +29,13 @@ const FeaturedBooksScreen = ({ route }) => {
         onPressNavigationLeft={() => navigation.goBack()}
         navigationLeft={true}
       />
-      <FeatureCard />
+      <ScrollView>
+        <FeatureCard />
+        <FeatureCard />
+        <FeatureCard />
+        <FeatureCard />
+        <FeatureCard />
+      </ScrollView>
     </View>
   );
 };

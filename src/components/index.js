@@ -14,6 +14,11 @@ import CategoryCard from "./CategoryCard";
 import BookList from "./BookList";
 import SearchInput from "./SearchInput";
 import FeatureCard from "./FeatureCard";
+import HeaderSetting from "./HeaderSetting";
+import SettingItem from "./SettingItem";
+import Stars from "./Stars";
+import Review from "./Review";
+import ModalContainer from "./ModalContainer";
 
 export {
   Container,
@@ -32,4 +37,9 @@ export {
   BookList,
   SearchInput,
   FeatureCard,
+  HeaderSetting,
+  SettingItem,
+  Stars,
+  Review,
+  ModalContainer,
 };

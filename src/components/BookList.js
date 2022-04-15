@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const BookList = ({ defaultTitle = "", navigationViewAll }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.titleContainer}>
         <Text style={styles.listTitle}>{defaultTitle}</Text>
         <TouchableOpacity activeOpacity={0.7} onPress={navigationViewAll}>
@@ -53,6 +53,9 @@ const styles = StyleSheet.create({
   viewAllText: {
     color: "#fff",
     fontSize: 12,
+  },
+  container: {
+    marginBottom: 10,
   },
 });
 

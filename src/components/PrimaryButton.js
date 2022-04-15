@@ -9,13 +9,20 @@ const PrimaryButton = ({
   color = "#fff",
   textColor = "#000",
   width = 100,
+  textSize = 14,
+  buttonHeight = 50,
   onPress = () => {
     console.log("Presssed");
   },
 }) => {
   return (
     <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
-      <View style={styles.container}>
+      <View
+        style={[
+          styles.container,
+          { height: buttonHeight, borderRadius: buttonHeight / 2 },
+        ]}
+      >
         {gradient ? (
           <LinearGradient
             colors={["rgba(64,202,186,0.95)", "rgba(80,225,166,0.95)"]}
@@ -28,10 +35,15 @@ const PrimaryButton = ({
         <View
           style={[
             styles.buttonContainer,
-            { backgroundColor: gradient ? "transparent" : color, width },
+            {
+              backgroundColor: gradient ? "transparent" : color,
+              width,
+            },
           ]}
         >
-          <Text style={[styles.textStyle, { color: textColor }]}>
+          <Text
+            style={[styles.textStyle, { color: textColor, fontSize: textSize }]}
+          >
             {title.toUpperCase()}
           </Text>
         </View>
@@ -42,15 +54,13 @@ const PrimaryButton = ({
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    height: 50,
-    borderRadius: 25,
     alignItems: "center",
     justifyContent: "center",
+    height: 50,
+    borderRadius: 25,
   },
   textStyle: {
-    fontSize: 15,
     textAlign: "center",
-
     fontWeight: "bold",
   },
   background: {
@@ -59,8 +69,6 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   container: {
-    height: 50,
-    borderRadius: 25,
     alignItems: "center",
     justifyContent: "center",
 

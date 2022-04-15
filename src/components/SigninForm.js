@@ -21,6 +21,7 @@ const SigninForm = ({ onPress, homeNavigation }) => {
             title="Login"
             textColor="#fff"
             width={100}
+            onPress={homeNavigation}
           />
         </View>
         <Text style={styles.textStyle}>
@@ -38,7 +39,6 @@ const SigninForm = ({ onPress, homeNavigation }) => {
             IconName="facebook"
             title="LOGIN WITH FACEBOOK"
             buttonColor="#517CC0"
-            onPress={homeNavigation}
           />
           <SocialButton
             Icon={FontAwesome5}

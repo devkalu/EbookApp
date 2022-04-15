@@ -34,14 +34,14 @@ const FeatureCard = () => {
         <View style={styles.bookInfo}>
           <View>
             <Text style={styles.bookTitle} numberOfLines={2}>
-              Book Name Book Name Book Name Book Name
+              Life on the Edge: The Coming of Age of Quantum Biology
             </Text>
           </View>
           <View>
-            <Text style={styles.author}>Author Name</Text>
+            <Text style={styles.author}>Johnjoe McFadden</Text>
           </View>
           <View style={styles.categoryContainer}>
-            <Text style={styles.categoryText}>Category</Text>
+            <Text style={styles.categoryText}>Biology</Text>
           </View>
 
           <View style={styles.descriptionContainer}>
@@ -53,7 +53,7 @@ const FeatureCard = () => {
             </Text>
           </View>
           <View>
-            <Stars ratingParam={5} />
+            <Stars ratingParam={4} />
           </View>
         </View>
       </View>
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     width: "90%",
     flexDirection: "row",
     alignSelf: "center",
-    marginVertical: 10,
+    marginTop: 10,
     backgroundColor: "#fff",
     padding: 10,
     shadowColor: "#000",
@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
   author: {
     color: "#576774",
     fontSize: 15,
+    fontWeight: "300",
   },
   bookTitle: {
     fontWeight: "600",

@@ -2,7 +2,7 @@ export const BOOKS = [
   {
     id: "01",
     title: "Life on the Edge: The Coming of Age of Quantum Biology",
-    authors: ["Johnjoe McFadden ", "Jim Al-Khalili"],
+    authors: ["Johnjoe McFadden", "Jim Al-Khalili"],
     image:
       "https://images-na.ssl-images-amazon.com/images/I/41sfej3EQdL._SX322_BO1,204,203,200_.jpg",
     rating: 4.6,

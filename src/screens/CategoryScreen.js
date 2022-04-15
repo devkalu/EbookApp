@@ -16,7 +16,7 @@ import { categorySelection } from "../actions/categories";
 const CategoryScreen = ({ categories, categorySelection }) => {
   const navigation = useNavigation();
 
-  const Footer = () => <View style={{ height: 100 }} />;
+  const Footer = () => <View style={{ height: 80 }} />;
   const Header = () => <View style={{ height: 10 }} />;
 
   return (

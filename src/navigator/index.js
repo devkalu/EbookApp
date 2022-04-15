@@ -46,6 +46,7 @@ const HomeStack = () => {
       <Stack.Screen name="HomeStack" component={HomeScreen} />
       <Stack.Screen name="FeaturedHomeStack" component={FeaturedBooksScreen} />
       <Stack.Screen name="BookHomeStack" component={BookDetailScreen} />
+      <Stack.Screen name="BookReadHomeStack" component={BookReadScreen} />
     </Stack.Navigator>
   );
 };
@@ -80,6 +81,7 @@ const FavoritesStack = () => {
         component={FeaturedBooksScreen}
       />
       <Stack.Screen name="BookFavoritesStack" component={BookDetailScreen} />
+      <Stack.Screen name="BookReadFavoritesStack" component={BookReadScreen} />
     </Stack.Navigator>
   );
 };
@@ -88,11 +90,6 @@ const SettingsStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="SettingsStack" component={SettingsScreen} />
-      <Stack.Screen
-        name="FeaturedSettingsStack"
-        component={FeaturedBooksScreen}
-      />
-      <Stack.Screen name="BookSettingsStack" component={BookDetailScreen} />
     </Stack.Navigator>
   );
 };
