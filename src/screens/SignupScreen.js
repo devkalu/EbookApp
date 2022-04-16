@@ -8,6 +8,7 @@ const SignupScreen = ({ navigation }) => {
     <ScrollView>
       <Header />
       <SignupForm onPress={() => navigation.navigate("SigninWelcomeStack")} />
+      <View style={{ height: 40 }} />
     </ScrollView>
   );
 };

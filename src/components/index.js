@@ -21,6 +21,9 @@ import Review from "./Review";
 import ModalContainer from "./ModalContainer";
 import ReviewInput from "./ReviewInput";
 import LogoutConfirmation from "./LogoutConfirmation";
+import SupportItem from "./SupportItem";
+import Subscription from "./Subscription";
+import NotificationItem from "./NotificationItem";
 
 export {
   Container,
@@ -46,4 +49,7 @@ export {
   ModalContainer,
   ReviewInput,
   LogoutConfirmation,
+  SupportItem,
+  Subscription,
+  NotificationItem,
 };

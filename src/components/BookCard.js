@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 const { width } = Dimensions.get("window");
 import { Colors } from "../constants";
 
-const BookCard = () => {
+const BookCard = ({screen=""}) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity

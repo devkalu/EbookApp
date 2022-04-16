@@ -14,11 +14,11 @@ import { useNavigation } from "@react-navigation/native";
 
 const { width } = Dimensions.get("window");
 
-const FeatureCard = ({ screen = "BookHomeStack" }) => {
+const FeatureCard = ({ screen = "BookHomeStack", readScreen }) => {
   const navigation = useNavigation();
 
   const onPressHandler = () => {
-    navigation.navigate(screen);
+    navigation.navigate(screen, { screen: readScreen });
   };
 
   return (

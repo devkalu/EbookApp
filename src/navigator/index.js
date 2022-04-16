@@ -20,6 +20,13 @@ import {
   CategoryScreen,
 } from "../screens";
 
+import {
+  HelpAndSupport,
+  ManageSubscription,
+  Notifications,
+  TermsAndConditions,
+} from "../additionalScreen";
+
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -69,6 +76,10 @@ const SettingsStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="SettingsStack" component={SettingsScreen} />
+      <Stack.Screen name="HelpAndSupport" component={HelpAndSupport} />
+      <Stack.Screen name="ManageSubscription" component={ManageSubscription} />
+      <Stack.Screen name="Notifications" component={Notifications} />
+      <Stack.Screen name="TermsAndConditions" component={TermsAndConditions} />
     </Stack.Navigator>
   );
 };

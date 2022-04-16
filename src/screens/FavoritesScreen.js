@@ -8,16 +8,46 @@ const FavoritesScreen = () => {
   return (
     <ScrollView>
       <HeaderSearch title="Favourites" />
-      <FeatureCard screen="BookFavoritesStack" />
-      <FeatureCard screen="BookFavoritesStack" />
-      <FeatureCard screen="BookFavoritesStack" />
-      <FeatureCard screen="BookFavoritesStack" />
-      <FeatureCard screen="BookFavoritesStack" />
-      <FeatureCard screen="BookFavoritesStack" />
-      <FeatureCard screen="BookFavoritesStack" />
-      <FeatureCard screen="BookFavoritesStack" />
-      <FeatureCard screen="BookFavoritesStack" />
-      <FeatureCard screen="BookFavoritesStack" />
+      <FeatureCard
+        screen="BookFavoritesStack"
+        readScreen="BookReadFavoritesStack"
+      />
+      <FeatureCard
+        screen="BookFavoritesStack"
+        readScreen="BookReadFavoritesStack"
+      />
+      <FeatureCard
+        screen="BookFavoritesStack"
+        readScreen="BookReadFavoritesStack"
+      />
+      <FeatureCard
+        screen="BookFavoritesStack"
+        readScreen="BookReadFavoritesStack"
+      />
+      <FeatureCard
+        screen="BookFavoritesStack"
+        readScreen="BookReadFavoritesStack"
+      />
+      <FeatureCard
+        screen="BookFavoritesStack"
+        readScreen="BookReadFavoritesStack"
+      />
+      <FeatureCard
+        screen="BookFavoritesStack"
+        readScreen="BookReadFavoritesStack"
+      />
+      <FeatureCard
+        screen="BookFavoritesStack"
+        readScreen="BookReadFavoritesStack"
+      />
+      <FeatureCard
+        screen="BookFavoritesStack"
+        readScreen="BookReadFavoritesStack"
+      />
+      <FeatureCard
+        screen="BookFavoritesStack"
+        readScreen="BookReadFavoritesStack"
+      />
       <View style={{ height: 20 }} />
     </ScrollView>
   );

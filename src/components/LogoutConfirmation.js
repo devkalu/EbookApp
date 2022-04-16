@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
+import { Colors } from "../constants";
 
 const LogoutConfirmation = ({ cancel }) => {
   const navigation = useNavigation();
@@ -18,7 +19,7 @@ const LogoutConfirmation = ({ cancel }) => {
       >
         <TouchableOpacity activeOpacity={0.7} onPress={cancel}>
           <View>
-            <Text style={[styles.confirm, { color: "red" }]}>No</Text>
+            <Text style={[styles.confirm, { color: "black" }]}>No</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -26,7 +27,9 @@ const LogoutConfirmation = ({ cancel }) => {
           onPress={() => navigation.navigate("SigninWelcomeStack")}
         >
           <View>
-            <Text style={[styles.confirm, { color: "green" }]}>Yes</Text>
+            <Text style={[styles.confirm, { color: Colors.primary100 }]}>
+              Yes
+            </Text>
           </View>
         </TouchableOpacity>
       </View>

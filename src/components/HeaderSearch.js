@@ -34,22 +34,32 @@ const HeaderSearch = ({
     TabBar = (
       <View style={styles.tabNavigation}>
         {navigationLeft ? (
-          <TouchableOpacity activeOpacity={0.7} onPress={onPressNavigationLeft}>
+          <TouchableOpacity
+            activeOpacity={0.7}
+            onPress={onPressNavigationLeft}
+            style={{ marginRight: 20 }}
+          >
             <NavigationLeftIcon />
           </TouchableOpacity>
         ) : (
-          <View style={{ width: 32 }} />
+          <View style={{ width: 32, marginLeft: 2 }} />
         )}
-        <Text style={styles.titleText}>{title.toUpperCase()}</Text>
+        <View style={{ width: "75%" }}>
+          <Text style={styles.titleText} numberOfLines={3}>
+            {title.toUpperCase()}
+          </Text>
+        </View>
+
         {navigationRight ? (
           <TouchableOpacity
             activeOpacity={0.7}
             onPress={onPressNavigationRight}
+            style={{ marginLeft: 20 }}
           >
             <NavigationRightIcon />
           </TouchableOpacity>
         ) : (
-          <View style={{ width: 32 }} />
+          <View style={{ width: 32, marginLeft: 20 }} />
         )}
       </View>
     );
@@ -82,7 +92,9 @@ const HeaderSearch = ({
             <SearchInput onPress={() => navigation.navigate("Category")} />
           </View>
         ) : (
-          <View style={{ flex: 1, justifyContent: "center" }}>{TabBar}</View>
+          <View style={{ flex: 1, justifyContent: "center", width: "90%" }}>
+            {TabBar}
+          </View>
         )}
       </ImageBackground>
     </View>

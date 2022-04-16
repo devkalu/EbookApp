@@ -14,9 +14,11 @@ import {
   FontAwesome,
   Entypo,
 } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const SettingsScreen = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigation = useNavigation();
 
   const toggleModal = () => {
     setIsVisible(!isVisible);
@@ -32,24 +34,28 @@ const SettingsScreen = () => {
           Icon={FontAwesome}
           iconName="check-square-o"
           iconSize={30}
+          onPress={() => navigation.navigate("ManageSubscription")}
         />
         <SettingItem
-          title="Notification"
+          title="Notifications"
           Icon={MaterialCommunityIcons}
           iconName="bell-alert-outline"
           iconSize={30}
+          onPress={() => navigation.navigate("Notifications")}
         />
         <SettingItem
           title="Terms & Conditions"
           Icon={Ionicons}
           iconName="md-document-text-outline"
           iconSize={30}
+          onPress={() => navigation.navigate("TermsAndConditions")}
         />
         <SettingItem
           title="Help & Support"
           Icon={FontAwesome}
           iconName="life-ring"
           iconSize={28}
+          onPress={() => navigation.navigate("HelpAndSupport")}
         />
         {isVisible && (
           <ModalContainer visibility={isVisible} toggleModal={toggleModal}>

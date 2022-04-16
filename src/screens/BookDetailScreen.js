@@ -23,9 +23,15 @@ import { Colors, SecondaryColor } from "../constants";
 
 const { width } = Dimensions.get("window");
 
-const BookDetailScreen = () => {
+const BookDetailScreen = ({ route }) => {
   const [isVisible, setIsVisible] = useState(false);
   const navigation = useNavigation();
+
+  let screen = "BookReadHomeStack";
+
+  if (route.params) {
+    screen = route.params.screen;
+  }
 
   const toggleModal = () => {
     setIsVisible(!isVisible);
@@ -80,6 +86,7 @@ const BookDetailScreen = () => {
               textColor="#fff"
               textSize={12}
               buttonHeight={40}
+              onPress={() => navigation.navigate(screen)}
             />
           </View>
         </View>

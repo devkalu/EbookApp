@@ -10,6 +10,7 @@ const SigninScreen = ({ navigation }) => {
         onPress={() => navigation.navigate("SignupWelcomeStack")}
         homeNavigation={() => navigation.navigate("Category")}
       />
+      <View style={{ height: 40 }} />
     </ScrollView>
   );
 };

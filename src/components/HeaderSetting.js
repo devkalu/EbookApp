@@ -21,7 +21,7 @@ const HeaderSetting = () => {
       >
         <LinearGradient
           // Background Linear Gradient
-          colors={["rgba(64,202,186,0.9)", "rgba(80,225,166,0.95)"]}
+          colors={["rgba(64,202,186,0.95)", "rgba(80,225,166,0.95)"]}
           style={styles.background}
           start={[0, 1]}
           end={[1, 0]}
