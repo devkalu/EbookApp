@@ -62,6 +62,7 @@ const HomeScreen = ({ books }) => {
             navigation.navigate("FeaturedHomeStack", {
               title: "Language",
               screen: "BookHomeStack",
+              readScreen: "BookReadHomeStack",
             })
           }
           defaultTitle="Language"
